@@ -1,0 +1,48 @@
+<div class="table-container">
+  <h3>Uploaded File Data</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>S.N</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Reports To</th>
+          <th>Validation Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let user of users; let i = index"
+          [class.invalid]="getValidationError(user)"
+        >
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.fullName }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <span [class]="'role-badge role-badge--' + user.role.toLowerCase()">
+              {{ user.role }}
+            </span>
+          </td>
+          <td>{{ user.reportsTo || "None" }}</td>
+          <td>
+            <div class="validation-status">
+              <ng-container *ngIf="getValidationError(user) as error">
+                <span
+                  [class]="'error-badge ' + getErrorBadgeClass(error.errorType)"
+                >
+                  {{ error.errorType }}
+                </span>
+                <p class="error-details">{{ error.details }}</p>
+              </ng-container>
+              <span *ngIf="!getValidationError(user)" class="valid-badge">
+                Valid
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

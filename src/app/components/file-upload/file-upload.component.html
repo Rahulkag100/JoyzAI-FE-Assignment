@@ -1,0 +1,78 @@
+<div class="file-validator">
+  <div class="file-validator__card">
+    <div class="file-validator__header">
+      <h1>JoyzAI FE Assignment : Hierarchy Validator</h1>
+    </div>
+    <div class="file-validator__rules">
+      <h2>Rules:</h2>
+      <ul>
+        <li>An admin can have multiple managers reporting to him.</li>
+        <li>Only admin will report to Root.( not to managers or callers)</li>
+        <li>
+          Managers can only report to other managers or admin. ( not to root or
+          callers)
+        </li>
+        <li>
+          Caller can only report to manager. ( not to admin, root or another
+          caller.)
+        </li>
+        <li>
+          All users will report to 1 parent user at a time. (1 user cannot have
+          multiple parents)
+        </li>
+      </ul>
+    </div>
+    <div class="file-validator__upload-area">
+      <label
+        class="file-validator__generalError"
+        [class.is-valid]="file && !generalError"
+        [class.has-error]="generalError"
+      >
+        <p class="upload-text">
+          <span class="highlight">Click to upload</span> or drag and drop
+        </p>
+        <p class="format-hint">CSV and Excel files supported</p>
+        <p *ngIf="file" class="file-name">File Name: {{ file?.name }}</p>
+        <input
+          type="file"
+          class="sr-only"
+          accept=".csv,.xlsx,.xls"
+          (change)="onFileSelected($event)"
+        />
+      </label>
+    </div>
+    <div class="file-validator__actions">
+      <button
+        (click)="uploadFile()"
+        class="btn-primary"
+        [disabled]="!file || isUploading"
+      >
+        Validate File
+      </button>
+      <button
+        (click)="clearFile()"
+        class="btn-secondary"
+        [disabled]="!file || isUploading"
+      >
+        Clear
+      </button>
+    </div>
+    <div
+      *ngIf="generalError"
+      class="file-validator__message file-validator__message--error"
+    >
+      <p><strong>Error:</strong> {{ generalError }}</p>
+    </div>
+    <div
+      *ngIf="uploadSuccess"
+      class="file-validator__message file-validator__message--success"
+    >
+      <p><strong>Success!</strong> Uploaded Data is valid.</p>
+    </div>
+    <app-table
+      *ngIf="showTableView"
+      [users]="users"
+      [validationErrors]="validationErrors"
+    ></app-table>
+  </div>
+</div>
