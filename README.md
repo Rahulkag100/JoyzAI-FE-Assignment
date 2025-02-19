@@ -1,27 +1,37 @@
-# JoyzaiAssignment
+# JoyzAI Frontend Assignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+Initial View of Application
 
-## Development server
+![image](https://github.com/user-attachments/assets/fcd9aaed-fb85-41c5-bc7c-d3c0a006557f)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+File Upload
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![image](https://github.com/user-attachments/assets/84c02d6b-9d8a-4a92-885d-56556599c9b2)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Click on Validate File button
 
-## Running unit tests
+![image](https://github.com/user-attachments/assets/a923ec9b-504e-4e83-8961-268808d8cd78)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+Table View with Error Messages and all details
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![image](https://github.com/user-attachments/assets/38fb6cb6-6505-4285-8124-9b1629e7fd35)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Responsive Design
+![image](https://github.com/user-attachments/assets/62928c49-4305-4f6b-858b-26538150d2cd)
+![image](https://github.com/user-attachments/assets/627bbc35-9744-4103-bc68-f7c8311b4ecf)
+![image](https://github.com/user-attachments/assets/9504113f-1942-45af-8078-cec8fea231a5)
+
+
+
+
+
+
+
+
+
+
+
